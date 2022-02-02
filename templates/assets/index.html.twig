@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Assets index{% endblock %}
+
+{% block body %}
+    <h1>Assets index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for asset in assets %}
+            <tr>
+                <td>{{ asset.id }}</td>
+                <td>{{ asset.name }}</td>
+                <td>{{ asset.quantity }}</td>
+                <td>
+                    <a href="{{ path('assets_show', {'id': asset.id}) }}">show</a>
+                    <a href="{{ path('assets_edit', {'id': asset.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('assets_new') }}">Create new</a>
+{% endblock %}
