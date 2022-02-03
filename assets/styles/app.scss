@@ -1,14 +1,17 @@
 @import 'variables.scss';
 
-* {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
+    margin:0;
+    padding: 0;
 }
 
 body{
-    margin: 0;
-    padding: 0;
     background-color: lightgray;
 }
+
 // START NAVBAR 
 
 .navbar{
@@ -72,7 +75,7 @@ body{
     border-radius: 10px;
 }
 //END NAVBAR
-// HOME PAGE
+// START HOME PAGE
 
 .castle{
     width: 100%;
@@ -91,7 +94,7 @@ body{
     font-size: 2rem;
 }
 // END HOME PAGE
-// FAMILY PAGE
+// START FAMILY PAGE
 
 .addButton{
     width: 3rem;
@@ -121,7 +124,7 @@ body{
 }
 
 // END FAMILY PAGE
-// EDIT FAMILY PAGE
+// START EDIT FAMILY PAGE
 
 .backButton{
     width: 3rem;
@@ -169,4 +172,34 @@ button.btn {
 
 .assets-list {
     margin-bottom: 3rem;
+}
+// END ASSETS PAGE
+// START BOOKING PAGE
+
+.booking-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5rem;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 5%);
+}
+
+.castle-picture {
+    width: 30vw;
+    height: 30vh;
+}
+
+.boking-container {
+    text-align: center;
+}
+
+.info-container{
+    font-size: 2rem;
+}
+
+.ticket-button{
+    border: solid thin;
+}
+
+.info-container .editButton{
+    width: 3rem;
 }
