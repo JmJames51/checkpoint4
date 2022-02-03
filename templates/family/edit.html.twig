@@ -1,13 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Family{% endblock %}
+{% block title %}Edit Family
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Family</h1>
 
-    {{ include('family/_form.html.twig', {'button_label': 'Update'}) }}
+	<div class="edit-container">
+		{% include '_navbar.html.twig' %}
+		<a href="{{ path('family_index') }}"><img class="backButton" src="{{ asset('build/images/undo-solid.svg')}}"></img>
+    	</a>
+	<h1>Edit
+		{{ family.firstname}}
+		{{ family.lastname }}
+	</h1>
 
-    <a href="{{ path('family_index') }}">back to list</a>
+	{{ include('family/_form.html.twig', {'button_label': 'Update', 'showDeleteForm': true}) }}
 
-    {{ include('family/_delete_form.html.twig') }}
+</div>
 {% endblock %}

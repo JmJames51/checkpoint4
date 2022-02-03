@@ -17,6 +17,8 @@ body{
     align-items: center;
     background-color: #333;
     color: white;
+    padding: 2rem;
+    margin-bottom: 3rem;
 }
 
 .brand-title{
@@ -24,10 +26,17 @@ body{
     margin: .5rem;
 }
 
+.brand-title a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
 .navbar-links ul{
     margin: 0;
     display: flex;
     align-items: center;
+    font-size: xx-large;
 }
 
 .navbar-links li{
@@ -82,37 +91,68 @@ body{
     font-size: 2rem;
 }
 // END HOME PAGE
+// FAMILY PAGE
 
-@media screen and (max-width: 600px){
-
-.toggle-btn{    
-    display: flex;
+.addButton{
+    width: 3rem;
 }
 
-.navbar-links{
-    display: none;
-    width: 100%;
+.editButton{
+    width: 2rem;
 }
 
-.navbar{
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.navbar-links ul{
-    width: 100%;
-    flex-direction: column;
-}
-
-.navbar-links li{
+.family-container {
     text-align: center;
-}
-
-.navbar-links li a{
-    padding: .5rem 1rem;
-}
-
-.navbar-links.active{
     display: flex;
+    flex-direction: column;
+}
+.family-profile{
+    width: 50%;
+}
+
+.family-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.family-list{
+    margin-bottom: 3rem;
+}
+
+// END FAMILY PAGE
+// EDIT FAMILY PAGE
+
+.backButton{
+    width: 3rem;
+    margin-bottom: 2rem;
+}
+
+.form-container{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+form {
+        input{
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            text-align: center;
 }
 }
+
+button.btn {
+    font-size: 3rem;
+    border: solid thin;
+}
+
+.button-form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-form form {
+    background-color: rgb(255, 0, 0);
+}
+
+// END EDIT FAMILY PAGE

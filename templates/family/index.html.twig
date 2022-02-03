@@ -1,39 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Family index{% endblock %}
+{% block title %}Royal family
+{% endblock %}
 
 {% block body %}
-    <h1>Family index</h1>
+{% include '_navbar.html.twig' %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Profile</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for family in families %}
-            <tr>
-                <td>{{ family.id }}</td>
-                <td>{{ family.firstname }}</td>
-                <td>{{ family.lastname }}</td>
-                <td>{{ family.profile }}</td>
-                <td>
-                    <a href="{{ path('family_show', {'id': family.id}) }}">show</a>
-                    <a href="{{ path('family_edit', {'id': family.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('family_new') }}">Create new</a>
-{% endblock %}
+<div class="family-container">
+	<div class="family-header">
+		<h1>Every member of the family</h1>
+		<a href="{{ path('family_new') }}"><img class="addButton" src="{{ asset('build/images/plus-circle-solid.svg')}}"></img></a>
+	</div>
+	{% for family in families %}
+		<div class="family-list">
+			<img class="family-profile" src="{{ family.profile }}"></img>
+		<h1>
+			{{ family.firstname}}
+			{{ family.lastname }}
+		</h1>
+		<a href="{{ path('family_edit', {'id': family.id}) }}"><img class="editButton" src="{{ asset('build/images/edit-regular.svg')}}"></img></a>
+	</div>
+{% else %}
+	<tr>
+		<td colspan="5">no family yet</td>
+	</tr>
+</div>{% endfor %}{% endblock %}
