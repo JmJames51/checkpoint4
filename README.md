@@ -16,6 +16,7 @@ We are almost done ! now that you've the prerequisite all left to do is to run t
 <blockquote>
 <strong>NOTE</strong>
 <p>Make sure you are in the right folder before running the <code>symfony server:start</code> command</p>
+<p> Also if you want to load the available fixture make sure to run this command : <code>symfony console doctrine:fixtures:load</code> or <code> symfony console d:f:l</code> for short 
 </blockquote>
 
 When you do that click on the server ip adress to view the web app.<br>
