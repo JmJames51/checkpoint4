@@ -25,6 +25,9 @@ class Booking
     #[ORM\Column(type: 'string', length: 255)]
     private $description;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $picture;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Booking
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
