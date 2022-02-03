@@ -21,7 +21,9 @@
 		<a href="{{ path('family_edit', {'id': family.id}) }}"><img class="editButton" src="{{ asset('build/images/edit-regular.svg')}}"></img></a>
 	</div>
 {% else %}
-	<tr>
-		<td colspan="5">no family yet</td>
-	</tr>
-</div>{% endfor %}{% endblock %}
+	<div>
+		<p>no family yet</p>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}
