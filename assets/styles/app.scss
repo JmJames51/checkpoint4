@@ -17,6 +17,7 @@ body{
     align-items: center;
     background-color: #333;
     color: white;
+    padding: 2rem;
 }
 
 .brand-title{
@@ -28,6 +29,7 @@ body{
     margin: 0;
     display: flex;
     align-items: center;
+    font-size: xx-large;
 }
 
 .navbar-links li{
@@ -82,7 +84,36 @@ body{
     font-size: 2rem;
 }
 // END HOME PAGE
+// FAMILY PAGE
 
+.addButton{
+    width: 3rem;
+}
+
+.editButton{
+    width: 2rem;
+}
+
+.family-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.family-profile{
+    width: 50%;
+}
+
+.family-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem;
+}
+
+.family-list{
+    margin-bottom: 3rem;
+}
+
+// END FAMILY PAGE
 @media screen and (max-width: 600px){
 
 .toggle-btn{    
