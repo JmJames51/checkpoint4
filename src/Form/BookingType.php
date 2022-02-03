@@ -16,6 +16,7 @@ class BookingType extends AbstractType
             ->add('name')
             ->add('availability')
             ->add('description')
+            ->add('picture')
         ;
     }
 
