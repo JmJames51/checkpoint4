@@ -3,39 +3,50 @@
 {% block title %}Booking index{% endblock %}
 
 {% block body %}
-    <h1>Booking index</h1>
+{% include '_navbar.html.twig' %}
+    <div class="boking-container">
+            <div class="family-header">
+		        <h1>Every castle available to visit</h1>
+		        <a href="{{ path('booking_new') }}"><img class="addButton" src="{{ asset('build/images/plus-circle-solid.svg')}}"></img></a>
+	        </div>    
+            {% for booking in bookings %}
+                <div class="booking-list">
+                    <div class="castle-container">
+                        <img class="castle-picture" src="{{ booking.picture }}"></img>
+                    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>City</th>
-                <th>Name</th>
-                <th>Availability</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for booking in bookings %}
-            <tr>
-                <td>{{ booking.id }}</td>
-                <td>{{ booking.city }}</td>
-                <td>{{ booking.name }}</td>
-                <td>{{ booking.availability }}</td>
-                <td>{{ booking.description }}</td>
-                <td>
-                    <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
-                    <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                    <div class="info-container">
+                        <p> {{ booking.city }} </p>
+                        <p> {{ booking.name }} </p>
+                        <p> {{ booking.description }} </p>
+                        <p> {{ booking.availability }} </p>
+                        <p class="ticket-button"> Book ticket now ! <p>
+                    </div>
 
-    <a href="{{ path('booking_new') }}">Create new</a>
+                </div>
+            {% else %}
+                <tr>
+                    <td colspan="6">No castle found</td>
+                </tr>
+            {% endfor %}
+        </div>
 {% endblock %}
+{# <div class="family-container">
+	<div class="family-header">
+		<h1>Every member of the family</h1>
+		<a href="{{ path('family_new') }}"><img class="addButton" src="{{ asset('build/images/plus-circle-solid.svg')}}"></img></a>
+	</div>
+	{% for family in families %}
+		<div class="family-list">
+			<img class="family-profile" src="{{ family.profile }}"></img>
+		<h1>
+			{{ family.firstname}}
+			{{ family.lastname }}
+		</h1>
+		<a href="{{ path('family_edit', {'id': family.id}) }}"><img class="editButton" src="{{ asset('build/images/edit-regular.svg')}}"></img></a>
+	</div>
+{% else %}
+	<div>
+		<p>no family yet</p>
+	</div>
+</div> #}
