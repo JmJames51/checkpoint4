@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Deceneus Maan
+{% endblock %}
+
+{% block body %}
+
+	{% include '_navbar.html.twig' %}
+	<div class="content-container">
+		<div class="castle-container">
+			<img class="castle" src="{{ asset('build/images/castle.5481c42a.jpg')}}">
+		</div>
+
+		<div class="home-about">
+			<figure class="quote-container">
+				<h1>Deceneus Maan</h1>
+				    <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet est mollis, cursus diam ut, sagittis ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Aenean vitae ex eget justo feugiat bibendum.
+				    </p>
+			</figure>
+		</div>
+	</div>
+{% endblock %}
