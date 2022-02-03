@@ -21,8 +21,8 @@
                         <p> {{ booking.description }} </p>
                         <p> {{ booking.availability }} </p>
                         <p class="ticket-button"> Book ticket now ! <p>
+		                <a href="{{ path('booking_edit', {'id': booking.id}) }}"><img class="editButton" src="{{ asset('build/images/edit-regular.svg')}}"></img></a>
                     </div>
-
                 </div>
             {% else %}
                 <tr>
@@ -31,22 +31,3 @@
             {% endfor %}
         </div>
 {% endblock %}
-{# <div class="family-container">
-	<div class="family-header">
-		<h1>Every member of the family</h1>
-		<a href="{{ path('family_new') }}"><img class="addButton" src="{{ asset('build/images/plus-circle-solid.svg')}}"></img></a>
-	</div>
-	{% for family in families %}
-		<div class="family-list">
-			<img class="family-profile" src="{{ family.profile }}"></img>
-		<h1>
-			{{ family.firstname}}
-			{{ family.lastname }}
-		</h1>
-		<a href="{{ path('family_edit', {'id': family.id}) }}"><img class="editButton" src="{{ asset('build/images/edit-regular.svg')}}"></img></a>
-	</div>
-{% else %}
-	<div>
-		<p>no family yet</p>
-	</div>
-</div> #}
