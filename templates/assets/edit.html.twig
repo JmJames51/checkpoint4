@@ -3,11 +3,10 @@
 {% block title %}Edit Assets{% endblock %}
 
 {% block body %}
-    <h1>Edit Assets</h1>
+		{% include '_navbar.html.twig' %}
+            <a href="{{ path('assets_index') }}"><img class="backButton" src="{{ asset('build/images/undo-solid.svg')}}"></img>
+    	    </a>
+            <h1>Edit {{ asset.name }}</h1>
+    {{ include('assets/_form.html.twig', {'button_label': 'Update','showDeleteForm': true}) }}
 
-    {{ include('assets/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('assets_index') }}">back to list</a>
-
-    {{ include('assets/_delete_form.html.twig') }}
 {% endblock %}

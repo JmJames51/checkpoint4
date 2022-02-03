@@ -156,3 +156,17 @@ button.btn {
 }
 
 // END EDIT FAMILY PAGE
+// ASSETS PAGE
+
+.assets-list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.asset-icon{
+    width: 5rem;
+}
+
+.assets-list {
+    margin-bottom: 3rem;
+}

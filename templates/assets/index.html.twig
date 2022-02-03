@@ -3,35 +3,29 @@
 {% block title %}Assets index{% endblock %}
 
 {% block body %}
-    <h1>Assets index</h1>
+{% include '_navbar.html.twig' %}
+    <div class="assets-container">
+        <div class="family-header">
+            <h1>Royal assets </h1>
+            <a href="{{ path('assets_new') }}"><img class="addButton" src="{{ asset('build/images/plus-circle-solid.svg')}}"></img></a>
+        </div>
+        <div class="assets-list-container">
+            {% for asset in assets %}
+            <div class="assets-list">
+                <img class="asset-icon" src="{{ asset('build/images/atom-solid.svg')}}"></img>
+		        <h1>
+			        {{ asset.name}}
+		        </h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for asset in assets %}
-            <tr>
-                <td>{{ asset.id }}</td>
-                <td>{{ asset.name }}</td>
-                <td>{{ asset.quantity }}</td>
-                <td>
-                    <a href="{{ path('assets_show', {'id': asset.id}) }}">show</a>
-                    <a href="{{ path('assets_edit', {'id': asset.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('assets_new') }}">Create new</a>
+			    <p>quantity : {{ asset.quantity }} </p>
+		        <a href="{{ path('assets_edit', {'id': asset.id}) }}"><img class="editButton" src="{{ asset('build/images/edit-regular.svg')}}"></img></a>
+            </div>
+            
+            {% else %}
+                <tr>
+                    <td colspan="4">no assets found</td>
+                </tr>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
