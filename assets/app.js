@@ -10,3 +10,11 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+const toggleBtn = document.getElementsByClassName("toggle-btn")[0];
+const navbarlinks = document.getElementsByClassName('navbar-links')[0]
+const links = document.getElementById('links');
+
+toggleBtn.addEventListener('click', () => {
+    navbarlinks.classList.toggle('active');
+})
