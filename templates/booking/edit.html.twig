@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Booking{% endblock %}
+
+{% block body %}
+	{% include '_navbar.html.twig' %}
+		<a href="{{ path('booking_index') }}"><img class="backButton" src="{{ asset('build/images/undo-solid.svg')}}"></img>
+    	</a>
+    <h1>Edit {{ booking.name }} Booking</h1>
+
+    {{ include('booking/_form.html.twig', {'button_label': 'Update', 'showDeleteForm': true}) }}
+
+
+{% endblock %}
