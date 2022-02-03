@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Family{% endblock %}
+{% block title %}New Family
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Family</h1>
+	{% include '_navbar.html.twig' %}
+	<a href="{{ path('family_index') }}"><img class="backButton" src="{{ asset('build/images/undo-solid.svg')}}"></img>
+</a>
+<h1>Add a new family member</h1>
 
-    {{ include('family/_form.html.twig') }}
-
-    <a href="{{ path('family_index') }}">back to list</a>
-{% endblock %}
+{{ include('family/_form.html.twig', {'showDeleteForm': false}) }}{% endblock %}

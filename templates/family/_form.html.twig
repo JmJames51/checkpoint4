@@ -1,4 +1,28 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="form-container">
+	{{ form_start(form, {
+        attr:{id: 'family_form'}
+}) }}
+	<div>
+		{{ form_widget(form.firstname,{ 
+            attr: {placeholder: 'Firstname'}
+}) }}
+	</div>
+	<div>
+		{{ form_widget(form.lastname,{ 
+            attr: {placeholder: 'Lastname'}
+}) }}
+	</div>
+	<div>
+		{{ form_widget(form.profile,{ 
+            attr: {placeholder: 'Profile picture'}
+}) }}
+	</div>
+
+	{{ form_end(form) }}
+    
+    <div class="button-form">
+        {% if showDeleteForm %}
+	        {{ include('family/_delete_form.html.twig') }}
+        {% endif %}
+	<button type="submit" form="family_form" class="btn">{{ button_label|default('Save') }}</button>
+</div>
