@@ -3,11 +3,12 @@
 {% block title %}Edit Booking{% endblock %}
 
 {% block body %}
-    <h1>Edit Booking</h1>
+	{% include '_navbar.html.twig' %}
+		<a href="{{ path('booking_index') }}"><img class="backButton" src="{{ asset('build/images/undo-solid.svg')}}"></img>
+    	</a>
+    <h1>Edit {{ booking.name }} Booking</h1>
 
-    {{ include('booking/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('booking/_form.html.twig', {'button_label': 'Update', 'showDeleteForm': true}) }}
 
-    <a href="{{ path('booking_index') }}">back to list</a>
 
-    {{ include('booking/_delete_form.html.twig') }}
 {% endblock %}
