@@ -7,7 +7,7 @@
 	{% include '_navbar.html.twig' %}
 	<a href="{{ path('assets_index') }}"><img class="backButton" src="{{ asset('build/images/undo-solid.svg')}}"></img>
 </a>
-<h1>Create new Assets</h1>
+<h1 class="title">Create new Assets</h1>
 
 {{ include('assets/_form.html.twig', {'showDeleteForm': false}) }}
 {% endblock %}

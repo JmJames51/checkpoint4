@@ -4,11 +4,11 @@
 
 {% block body %}
 {% include '_navbar.html.twig' %}
-    <div class="boking-container">
             <div class="family-header">
 		        <h1>Every castle available to visit</h1>
 		        <a href="{{ path('booking_new') }}"><img class="addButton" src="{{ asset('build/images/plus-circle-solid.svg')}}"></img></a>
 	        </div>    
+            <div class="boking-container">
             {% for booking in bookings %}
                 <div class="booking-list">
                     <div class="castle-container">

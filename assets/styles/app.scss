@@ -12,6 +12,9 @@ body{
     background-color: lightgray;
 }
 
+.title{
+    text-align: center;
+}
 // START NAVBAR 
 
 .navbar{
@@ -129,6 +132,7 @@ body{
 .backButton{
     width: 3rem;
     margin-bottom: 2rem;
+    margin-left: 1rem;
 }
 
 .form-container{
@@ -142,6 +146,11 @@ form {
             font-size: 3rem;
             text-align: center;
 }
+}
+
+.form-container input {
+    max-width: 50vw;
+    font-size: 2rem;
 }
 
 button.btn {
@@ -177,8 +186,6 @@ button.btn {
 // START BOOKING PAGE
 
 .booking-list {
-    display: flex;
-    justify-content: space-evenly;
     margin-bottom: 5rem;
     box-shadow: 0 2px 3px rgb(0 0 0 / 5%);
 }
@@ -203,3 +210,57 @@ button.btn {
 .info-container .editButton{
     width: 3rem;
 }
+
+
+@media screen and (max-width: 600px){
+    .toggle-btn{
+      display: flex;
+    }
+    .navbar-links{
+      display: none;
+      width: 100%;
+    }
+    .navbar{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .navbar-links ul{
+      width: 100%;
+      flex-direction: column;
+    }
+    .navbar-links li{
+      text-align: center;
+    }
+    .navbar-links li a{
+      padding: .5rem 1rem;
+    }
+    .navbar-links.active{
+      display: flex;
+    }
+  }
+
+  @media screen and (min-width: 1024px){
+        .booking-list{
+            display: flex;
+        }
+        .info-container{
+            font-size: 2rem;
+            max-width: 25%;
+        }
+    }
+
+    @media screen and (max-width: 420px){
+        .button-form{ 
+            display: unset;
+        }
+
+        .button-form form{
+            background-color: unset;
+            margin-top: 1rem;
+            margin-bottom:1rem;
+        }
+
+        .del{
+            background-color: red;
+        }
+    }
