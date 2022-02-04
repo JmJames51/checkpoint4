@@ -12,6 +12,9 @@ body{
     background-color: lightgray;
 }
 
+.title{
+    text-align: center;
+}
 // START NAVBAR 
 
 .navbar{
@@ -129,6 +132,7 @@ body{
 .backButton{
     width: 3rem;
     margin-bottom: 2rem;
+    margin-left: 1rem;
 }
 
 .form-container{
