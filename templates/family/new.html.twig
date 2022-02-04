@@ -7,7 +7,7 @@
 	{% include '_navbar.html.twig' %}
 	<a href="{{ path('family_index') }}"><img class="backButton" src="{{ asset('build/images/undo-solid.svg')}}"></img>
 </a>
-<h1>Add a new family member</h1>
+<h1 class="title">Add a new family member</h1>
 
 {{ include('family/_form.html.twig', {'showDeleteForm': false}) }}
 {% endblock %}
